@@ -42,7 +42,7 @@ Agora sim você pode salvar a alteração
 
 * Depois de dar o commit, irá aparecer em qual branch foi feito o commit, os 7 primeiros digitos da hash que indentifica o commit e depois as alterações que foram feitas.
 
-<img src="https://cdn.discordapp.com/attachments/719925704208416798/958465403070341190/unknown.png">
+<img src="https://cdn.discordapp.com/attachments/719925704208416798/958465403070341190/unknown.png" />
 
 Dica: o comando `git log` vai te mostrar todos os commits dados na branch.
 
@@ -60,6 +60,8 @@ Dica: o comando `git log` vai te mostrar todos os commits dados na branch.
 
 * Caso você queria `deletar` sua branch localemnte, dê o comando `git branch -D nomedabranch`, onde primeiro você deve mudar para outra branch antes de deletar.
 
+* No caso de excluir a branch remotamente(*logo em seguida irei mostrar como conectar o repositório local com o remoto*), o comando é: `git push origin :nomedabranch`, note que há um `:` antes do nome da branch que irá ser deletada, e o `origin` é o nome do repositório, podendo ser diferente.
+
 ## Deletar e Reverter Modificações
 
 Para você deletar um commit, primeiramente você deve saber que irá ser deletado todos os commits depois do commit selecionado. Há três tipos de reset que você pode dar:
@@ -73,3 +75,66 @@ Para você deletar um commit, primeiramente você deve saber que irá ser deleta
 
 Caso você queira reverter alguma modificação sem deletar nenhum commit, use o `git revert --no-edit hashdocommit"`. Este comando irá deletar tudo o que você fez somente no commit selecionado e não irá afetar os outros commits.
 
+## Criar repositório no Github
+
+Para criar um repositório, você deve ter uma conta. Depois de criar sua conta vá em `Criar nono repositório`
+
+Você vai colocar todas as informações do projeto que está pedindo
+
+<img src="https://cdn.discordapp.com/attachments/719925704208416798/958479652282834974/unknown.png" />
+
+Depois de criar o repositório remoto, vai aparecer uma tela com um link
+
+<img src="https://cdn.discordapp.com/attachments/719925704208416798/958480150004129822/unknown.png" />
+
+* Para conectar o repositório local ao remoto, copie o link que aparece e utilize o comando: `git remote add origin linkcopiado` (*normalmente utiliza-se `origin` para o nome do repositório remoto, porém você pode mudar*)
+
+
+* Se você quiser verificar se foi adicionado, dê `git remote`, irá mostrar o nome do repositório que está ativo.
+
+Agora podemos enviar nossos arquivos do repositório local ao remoto
+
+* Com o seguinte comando: `git push -u origin master` vocÊ vai enviar seus arquivos para o repositório remoto, onde o `origin` é o nome do repositório e o `master` é o nome da branch que você quer enviar, podendo ser alterados os dois items.(*se não está configurado o email e senha do github, irá pedir para colocar, então coloque e será enviado os arquivos logo depois*)
+
+* Agora que os dois repositórios estão conectados, podemos enviar nossas alterações para o repositório remoto usando o comando: `git push origin main`(*sem o -u*), depois claro de ter dado o commit nas alterações.
+
+* Se tiver algum arquivo que você não queira enviar, crie um arquivo chamado `.gitignore` na pasta e dentro dele coloque quais arquivos você quer que não seja enviado
+<img src="https://cdn.discordapp.com/attachments/719925704208416798/958485814373933096/unknown.png" />
+
+## Pull, Clonar e Fork
+
+No repositório podemos ter várias pessoas trabalhando em um projeto, ou no Github temos a opção de contribuir com outros projetos, para puxar essas alterações feitas por outras pessoas, damos o nome de pull.
+
+* Para dar um pull, use o comando: `git pull origin master`, isso irá puxar todos os arquivos e commits para seu repositório local.
+
+Agora temos a opção de clonar, que vamos pegar um repositório remoto, qualquer um que seja e copiar os arquivos para nosso PC.
+
+* Para clonar, pegue a `URL do repositório`, e dê o comando: `git clone linkdorepositorio`, isso irá fazer uma cópia dos arquivos onde o `CMD` está, então certifique-se de verificar se está onde você quer que seja copiado os arquivos.
+
+<img src="https://cdn.discordapp.com/attachments/719925704208416798/958488664374140998/unknown.png" />
+
+*Ou pegue na própria URL do Giithub*
+
+Para contribuir com um projeto, primeiros temos que dar um Fork, depois clonar, enviar as alterações e mandar para o dono do repositório para ele ver se aceita ou não a contribuição enviada.
+
+* Para dar um Fork, vá em um repositório que quer contribuir, no canto superior direito irá ter um botão `Fork`, quando clicado, vai criar um repositório idêntico ao original, mas só que em seu perfil.
+
+<img src="https://cdn.discordapp.com/attachments/719925704208416798/958490811350278214/unknown.png" />
+
+* Agora, clone o repositório criado em seu perfil, modifique o que quiser modificar, dê commits, depois envie para o repositório com o push, porém as alterações não vão afetar o repositório original, o `Pull Request` vai enviar as alterações para o criador do repositório original.
+
+* Para dar um Pull Request, vá no repositório criado em seu perfil, clique em Pull Requests > New pull request > Create pull request.
+
+<img src="https://cdn.discordapp.com/attachments/719925704208416798/958496375576883201/unknown.png" />
+
+Você irá colocar um nome intuitivo, que mostre as alterações feitas e também é bom criar uma boa descrição do que alterou, não somente explicando o que é, mas ensinando ao dono do repositório original a forma como ele poderá testar também
+
+Depois disso, basta esperar para que o dono da branch original aceite o seu pull request
+
+## Final
+
+O Git/Github abrange diversas funcionalidades, porém com essas que descrevi, vocês irão conseguir criar projetos bem legais e aproveitar das funcionalidades de se ter um repositório.
+
+Recomendo que se vocês tiverem alguma dúvida, passarem na <a href="https://git-scm.com/doc">documentação oficial do Git</a> e procurar a resposta lá, caso queira criar um pull request para acrescentar ou alterar informações neste repositório que criei, fique à vontade😄.
+
+Até mais.
