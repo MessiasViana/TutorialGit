@@ -77,7 +77,7 @@ Caso você queira reverter alguma modificação sem deletar nenhum commit, use o
 
 ## Criar repositório no Github
 
-Para criar um repositório, você deve ter uma conta. Depois de criar sua conta vá em `Criar nono repositório`
+Para criar um repositório, você deve ter uma conta. Depois de criar sua conta vá em `Criar novo repositório`
 
 Você vai colocar todas as informações do projeto que está pedindo
 
@@ -94,7 +94,7 @@ Depois de criar o repositório remoto, vai aparecer uma tela com um link
 
 Agora podemos enviar nossos arquivos do repositório local ao remoto
 
-* Com o seguinte comando: `git push -u origin master` vocÊ vai enviar seus arquivos para o repositório remoto, onde o `origin` é o nome do repositório e o `master` é o nome da branch que você quer enviar, podendo ser alterados os dois items.(*se não está configurado o email e senha do github, irá pedir para colocar, então coloque e será enviado os arquivos logo depois*)
+* Com o seguinte comando: `git push -u origin master` você vai enviar seus arquivos para o repositório remoto, onde o `origin` é o nome do repositório e o `master` é o nome da branch que você quer enviar, podendo ser alterados os dois items.(*se não está configurado o email e senha do github, irá pedir para colocar, então coloque e será enviado os arquivos logo depois*)
 
 * Agora que os dois repositórios estão conectados, podemos enviar nossas alterações para o repositório remoto usando o comando: `git push origin main`(*sem o -u*), depois claro de ter dado o commit nas alterações.
 
